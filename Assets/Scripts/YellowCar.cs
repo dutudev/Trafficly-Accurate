@@ -1,15 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 
-public class RedCar : MonoBehaviour
+public class YellowCar : MonoBehaviour
 {
     public Transform transformRed;
     public GameObject target;
     public float movementSpeed = 8f;
     public int directionFacing; //Declare This On Scene
     //1 forward, 2 left, 3 right, 4 backwards
-    public bool detectedPlayer = false;
 
+    public bool sides; //Declare This On Scene
+    //if it comes from sides or not, check player 
+    public bool detectedPlayer = false;
+    public float threshold;
 
 
     void Awake()
@@ -42,11 +47,25 @@ public class RedCar : MonoBehaviour
 
     void Update()
     {
-        if (target.transform.position.y >= this.transform.position.y)
-            detectedPlayer = true;
+        if (sides)
+        {
+            if (target.transform.position.y >= this.transform.position.y)
+                detectedPlayer = true;
+        }
+
+        else if (sides == false) //sides
+        {
+            if (target.transform.position.x >= this.transform.position.x)
+                detectedPlayer = true;
+        }
 
         if (detectedPlayer)
             Move(directionFacing);
+
+        if (detectedPlayer && this.transform.position.x > target.transform.position.y - threshold)
+            detectedPlayer = false;
+
+        //Implement Faza Lung / Honk , make him move again
     }
 
     public void Move(int direction)
