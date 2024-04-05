@@ -6,13 +6,13 @@ using TMPro;
 public class GoalManagement : MonoBehaviour
 {
     public GameObject[] targets;
-    public float cooldown;
+    private float cooldown;
     public TMP_Text stateText;
     // 1-intermission; 2-in round
-    public int state, lastTarget = -1, curTarget, targetsNeeded, targetsHit;
+    private int state, lastTarget = -1, curTarget, targetsNeeded, targetsHit;
     void Start()
     {
-        cooldown = 5f;
+        cooldown = 1f;
         state = 1;
         targetsNeeded = 5;
     }
@@ -58,7 +58,7 @@ public class GoalManagement : MonoBehaviour
         lastTarget = curTarget;
         curTarget = -1;
         state = 1;
-        cooldown = 5f;
+        cooldown = 0.1f;
         targetsHit++;
         if(targetsNeeded == targetsHit)
         {
