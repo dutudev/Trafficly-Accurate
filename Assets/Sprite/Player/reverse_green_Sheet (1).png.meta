@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3d0201cb51840e45b866be93e01669a
+guid: 4364a1e175dbc164ba10580a87df16fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: reverse_green_Sheet_0
+      name: reverse_green_Sheet (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9426269da88c80499d3df8615d59d9d
-      internalID: 68869730
+      spriteID: fc8c88c1459e996419d4042de411cda9
+      internalID: 1008344444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reverse_green_Sheet_1
+      name: reverse_green_Sheet (1)_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 32
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a191a62a9a3c80848850330e512d3045
-      internalID: 1855697886
+      spriteID: f23211960ea359145b10770913cacf38
+      internalID: 1216910299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reverse_green_Sheet_2
+      name: reverse_green_Sheet (1)_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 64
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14c324ecd9a2a7641a1d98e0e13f0be7
-      internalID: 1888884323
+      spriteID: c2f1fe08356fa6f439799acf967bbc76
+      internalID: -873123431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reverse_green_Sheet_3
+      name: reverse_green_Sheet (1)_3
       rect:
         serializedVersion: 2
-        x: 150
+        x: 96
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2b7a278562464749b5914775067c5b0
-      internalID: -2034577522
+      spriteID: 5df8c51154f818e4e88a32c174df4c4e
+      internalID: 463982149
       vertices: []
       indices: 
       edges: []
@@ -243,10 +243,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      reverse_green_Sheet_0: 68869730
-      reverse_green_Sheet_1: 1855697886
-      reverse_green_Sheet_2: 1888884323
-      reverse_green_Sheet_3: -2034577522
+      reverse_green_Sheet (1)_0: 1008344444
+      reverse_green_Sheet (1)_1: 1216910299
+      reverse_green_Sheet (1)_2: -873123431
+      reverse_green_Sheet (1)_3: 463982149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
