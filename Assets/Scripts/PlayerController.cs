@@ -50,8 +50,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
-
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
         {
             isIddle = true;
