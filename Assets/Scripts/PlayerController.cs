@@ -53,12 +53,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
         {
             isIddle = true;
-            animator.SetBool("isMoving", false);
-            animator.SetBool("isReverse", false);
+
         }
 
         if (isIddle)
+        {
+            animator.SetBool("isMoving", false);
+            animator.SetBool("isReverse", false);
             animator.SetBool("isIdle", true);
+        }
     }
 
     void FixedUpdate()
