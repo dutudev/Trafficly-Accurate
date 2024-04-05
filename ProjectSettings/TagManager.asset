@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemap
+    uniqueID: 3876323557
+    locked: 0
+  - name: Cars
+    uniqueID: 559219365
+    locked: 0
