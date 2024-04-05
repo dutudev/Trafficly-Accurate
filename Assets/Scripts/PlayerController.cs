@@ -8,15 +8,15 @@ public class PlayerController : MonoBehaviour
     public float speed, brakingForce;
     public int dir;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Debug.Log(transform.up);
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Z))
+        {
+
+        }
+
+
         if (Input.GetAxisRaw("Vertical") > 0 && Input.GetKey(KeyCode.W))
         {
             dir = 1;

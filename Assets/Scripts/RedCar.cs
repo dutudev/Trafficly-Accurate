@@ -10,6 +10,8 @@ public class RedCar : MonoBehaviour
     //1 forward, 2 left, 3 right, 4 backwards
     public bool detectedPlayer = false;
 
+    public bool sides;
+
 
 
     void Awake()
@@ -42,8 +44,16 @@ public class RedCar : MonoBehaviour
 
     void Update()
     {
-        if (target.transform.position.y >= this.transform.position.y)
-            detectedPlayer = true;
+        if (sides)
+        {
+            if (target.transform.position.y >= this.transform.position.y)
+                detectedPlayer = true;
+        }
+        if (!sides)
+        {
+            if (target.transform.position.x >= this.transform.position.x)
+                detectedPlayer = true;
+        }
 
         if (detectedPlayer)
             Move(directionFacing);
