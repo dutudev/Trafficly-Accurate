@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GoalManagement : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class GoalManagement : MonoBehaviour
         targetsHit++;
         if(targetsNeeded == targetsHit)
         {
-            // go next intersection (scene)
+            SceneManager.LoadScene("Level1");
         }
     }
 }
