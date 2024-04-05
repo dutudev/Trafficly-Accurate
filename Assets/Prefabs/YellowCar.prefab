@@ -50,6 +50,9 @@ MonoBehaviour:
   target: {fileID: 0}
   movementSpeed: 8
   directionFacing: 1
+  detectedPlayer: 0
+  stoppedInFront: 0
+  threshold: 0
 --- !u!212 &7605622849262362822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,7 +134,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

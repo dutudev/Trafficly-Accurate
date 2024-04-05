@@ -10,10 +10,9 @@ public class YellowCar : MonoBehaviour
     public float movementSpeed = 8f;
     public int directionFacing; //Declare This On Scene
     //1 forward, 2 left, 3 right, 4 backwards
-
-    public bool sides; //Declare This On Scene
-    //if it comes from sides or not, check player 
     public bool detectedPlayer = false;
+
+    public bool stoppedInFront = false;
     public float threshold;
 
 
@@ -47,23 +46,19 @@ public class YellowCar : MonoBehaviour
 
     void Update()
     {
-        if (sides)
+        if (stoppedInFront == false)
         {
             if (target.transform.position.y >= this.transform.position.y)
                 detectedPlayer = true;
         }
 
-        else if (sides == false) //sides
-        {
-            if (target.transform.position.x >= this.transform.position.x)
-                detectedPlayer = true;
-        }
-
-        if (detectedPlayer)
+        if (detectedPlayer && stoppedInFront == false)
             Move(directionFacing);
 
-        if (detectedPlayer && this.transform.position.x > target.transform.position.y - threshold)
-            detectedPlayer = false;
+        if (detectedPlayer && this.transform.position.x > target.transform.position.x - threshold)
+        {
+            stoppedInFront = true;
+        }
 
         //Implement Faza Lung / Honk , make him move again
     }
