@@ -7,33 +7,62 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float speed, brakingForce;
     public int dir;
+    public Animator animator;
+    public bool isIddle = true;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Z))
+
+        if (Input.GetAxisRaw("Vertical") > 0 && Input.GetKeyDown(KeyCode.W))
         {
-
-        }
-
-
-        if (Input.GetAxisRaw("Vertical") > 0 && Input.GetKey(KeyCode.W))
-        {
+            isIddle = false;
             dir = 1;
+            animator.SetBool("isMoving", true);
+            animator.SetBool("isReverse", false);
         }
-        else if (Input.GetAxisRaw("Vertical") < 0 && Input.GetKey(KeyCode.S))
+        else if (Input.GetAxisRaw("Vertical") < 0 && Input.GetKeyDown(KeyCode.S))
         {
+            isIddle = false;
             dir = 2;
+            animator.SetBool("isReverse", true);
+            animator.SetBool("isMoving", false);
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetKey(KeyCode.A))
+        else if (Input.GetAxisRaw("Horizontal") < 0 && Input.GetKeyDown(KeyCode.A))
         {
+            isIddle = false;
             dir = 3;
+            animator.SetBool("isMoving", true);
+            animator.SetBool("isReverse", false);
+
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetKey(KeyCode.D))
+        else if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetKeyDown(KeyCode.D))
         {
+            isIddle = false;
             dir = 4;
+            animator.SetBool("isMoving", true);
+            animator.SetBool("isReverse", false);
+
         }
+
+
+
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            isIddle = true;
+            animator.SetBool("isMoving", false);
+            animator.SetBool("isReverse", false);
+        }
+
+        if (isIddle)
+            animator.SetBool("isIdle", true);
     }
+
     void FixedUpdate()
     {
         switch (dir)
@@ -68,13 +97,13 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 break;
             case 2:
-                transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 break;
             case 3:
-                transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                 break;
             case 4:
-                transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                 break;
 
         }

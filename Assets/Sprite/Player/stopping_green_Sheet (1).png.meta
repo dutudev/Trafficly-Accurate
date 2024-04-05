@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 01c523c905b90d1408b750d6da692b15
+guid: 4c26881c5c196c9488e8bfd35791d605
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stopping_green_Sheet_0
+      name: stopping_green_Sheet (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 629a20c2b80cc804a931cbd9b4b7f363
-      internalID: -279229388
+      spriteID: 9ba574f5fce39234cab0ee058e30710e
+      internalID: -493212706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stopping_green_Sheet_1
+      name: stopping_green_Sheet (1)_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 32
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1efae4356d217da45976da8e3ffba376
-      internalID: -1361482223
+      spriteID: 4859476483d5b274ab683980a75296d5
+      internalID: -199757548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stopping_green_Sheet_2
+      name: stopping_green_Sheet (1)_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 64
         y: 0
-        width: 50
-        height: 30
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d42fe5e30b7e8a49a994d9d969541b8
-      internalID: 1663636195
+      spriteID: e28f2e2b73a5e4848ad02f5ccaa97ed9
+      internalID: -1816864467
       vertices: []
       indices: 
       edges: []
@@ -222,9 +222,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stopping_green_Sheet_0: -279229388
-      stopping_green_Sheet_1: -1361482223
-      stopping_green_Sheet_2: 1663636195
+      stopping_green_Sheet (1)_0: -493212706
+      stopping_green_Sheet (1)_1: -199757548
+      stopping_green_Sheet (1)_2: -1816864467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
