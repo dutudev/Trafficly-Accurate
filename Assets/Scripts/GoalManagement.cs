@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GoalManagement : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GoalManagement : MonoBehaviour
     public int state, lastTarget = -1, curTarget, targetsNeeded, targetsHit;
     void Start()
     {
-        cooldown = 5f;
+        cooldown = 1f;
         state = 1;
         targetsNeeded = 5;
     }
@@ -58,11 +59,11 @@ public class GoalManagement : MonoBehaviour
         lastTarget = curTarget;
         curTarget = -1;
         state = 1;
-        cooldown = 5f;
+        cooldown = 0.1f;
         targetsHit++;
         if(targetsNeeded == targetsHit)
         {
-            // go next intersection (scene)
+            SceneManager.LoadScene("Level1");
         }
     }
 }
