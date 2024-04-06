@@ -66,6 +66,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Vector2 movement = inputDirection * speed;
+        Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
+        rb.MovePosition(newPosition);
+        transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
+        /*
         switch (dir)
         {
             case 1:
@@ -87,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
+        */
     }
 
     void RotatePlayer(int rotDir)
