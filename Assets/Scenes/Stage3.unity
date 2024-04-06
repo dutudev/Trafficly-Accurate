@@ -16657,6 +16657,7 @@ GameObject:
   - component: {fileID: 1259882410}
   - component: {fileID: 1259882411}
   - component: {fileID: 1259882412}
+  - component: {fileID: 1259882413}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16761,7 +16762,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -16842,10 +16843,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VirtualCamera: {fileID: 1524717174}
   playerController: {fileID: 548169455}
-  volume: {fileID: 0}
+  volume: {fileID: 1259882413}
   vignette: {fileID: 0}
   colorAdjustments: {fileID: 0}
   grain: {fileID: 0}
+--- !u!114 &1259882413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259882406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 1ee35efc6ad9b0b49acdd43aab6c9970, type: 2}
 --- !u!1 &1293772370
 GameObject:
   m_ObjectHideFlags: 0
@@ -19002,29 +19020,9 @@ PrefabInstance:
       propertyPath: select
       value: 
       objectReference: {fileID: 512941788}
-    - target: {fileID: 7082504595014939465, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7082504595014939465, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 559219365
-      objectReference: {fileID: 0}
     - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
       propertyPath: m_LocalPosition.x
