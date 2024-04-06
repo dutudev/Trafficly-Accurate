@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isReverse", false);
             animator.SetBool("isIdle", true);
         }
-        if (Input.GetAxisRaw("Fire2") == 1 && switchCooldown <= 0f)
+       /* if (Input.GetAxisRaw("Fire2") == 1 && switchCooldown <= 0f)
         {
             if(selected >= 3)
             {
@@ -95,10 +95,10 @@ public class PlayerController : MonoBehaviour
             AnimateSelect();
         }
 
-        switchCooldown -= Time.deltaTime;
+        switchCooldown -= Time.deltaTime;*/
     }
 
-    void AnimateSelect()
+ /*   void AnimateSelect()
     {
         
         switch (selected)
@@ -121,30 +121,27 @@ public class PlayerController : MonoBehaviour
                 });
                 break;
         }
-    }
+    } */
     void FixedUpdate()
     {
         if (canMove)
-        {
-            switch (selected)
-            {
-                case 1:
-                    inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Mathf.Abs( Input.GetAxisRaw("Vertical"))).normalized;
-                    break;
-                case 2:
-                    inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), -Mathf.Abs(Input.GetAxisRaw("Vertical"))).normalized;
-                    break;
-                case 3:
-                    
-                    break;
-            }
+        {   
+            inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             Vector2 movement = inputDirection * speed;
             Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
             rb.MovePosition(newPosition);
             //  transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
             if (Mathf.Abs(Input.GetAxisRaw("Vertical")) >= Mathf.Abs(Input.GetAxisRaw("Horizontal")))
             {
-                RotatePlayer(1);
+                if(Input.GetAxisRaw("Vertical") >= 0)
+                {
+                    RotatePlayer(1);
+                }
+                else
+                {
+                    RotatePlayer(2);
+                }
+                
             }
             else if (Input.GetAxisRaw("Horizontal") > 0)
             {
