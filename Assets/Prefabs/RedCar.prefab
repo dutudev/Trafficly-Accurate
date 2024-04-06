@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8319337785885310066}
   m_Layer: 0
   m_Name: RedCar
-  m_TagString: Untagged
+  m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

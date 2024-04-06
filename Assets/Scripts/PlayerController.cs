@@ -165,12 +165,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Target"))
+        {
+            UnityEngine.Debug.Log("Intru");
             ScenesMan.Instance.ChangeScene(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).ToString());
+        }
 
         if (other.gameObject.CompareTag("Danger"))
+        {
+            UnityEngine.Debug.Log("Intru");
             ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().ToString());
+        }
     }
 }
