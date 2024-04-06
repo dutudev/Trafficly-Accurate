@@ -11,6 +11,7 @@ public class RedCar : MonoBehaviour
     public bool detectedPlayer = false;
 
     public bool sides;
+    public int whatSide; //1 left, 2 right
 
 
 
@@ -44,15 +45,44 @@ public class RedCar : MonoBehaviour
 
     void Update()
     {
-        if (sides)
+        if (directionFacing == 1)
+        {
+            if (whatSide == 1)
+            {
+                if (target.transform.position.x <= this.transform.position.x)
+                    detectedPlayer = true;
+            }
+            else if (whatSide == 2)
+            {
+                if (target.transform.position.x >= this.transform.position.x)
+                    detectedPlayer = true;
+            }
+        }
+
+        else if (directionFacing == 2)
         {
             if (target.transform.position.y >= this.transform.position.y)
                 detectedPlayer = true;
         }
-        if (!sides)
+
+        else if (directionFacing == 3)
         {
-            if (target.transform.position.x >= this.transform.position.x)
+            if (target.transform.position.y <= this.transform.position.y)
                 detectedPlayer = true;
+        }
+
+        else if (directionFacing == 4)
+        {
+            if (whatSide == 1)
+            {
+                if (target.transform.position.x <= this.transform.position.x)
+                    detectedPlayer = true;
+            }
+            else if (whatSide == 2)
+            {
+                if (target.transform.position.x >= this.transform.position.x)
+                    detectedPlayer = true;
+            }
         }
 
         if (detectedPlayer)

@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3076235948885511636
 MonoBehaviour:
@@ -48,11 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformRed: {fileID: 0}
   target: {fileID: 0}
-  movementSpeed: 8
+  movementSpeed: 12
   directionFacing: 1
   detectedPlayer: 0
   stoppedInFront: 0
   threshold: 0
+  sides: 0
 --- !u!212 &7605622849262362822
 SpriteRenderer:
   m_ObjectHideFlags: 0
