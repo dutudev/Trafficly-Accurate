@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
-    [SerializeField]public car[] cars;
+    public car[] cars;
+    public int currentIndex = 0;
+    public TMP_Text carName, buyText;
+    public Image image;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +21,14 @@ public class ShopManager : MonoBehaviour
     {
         
     }
-}
+    public void UpdateText()
+    {
+        carName.text = cars[currentIndex].name;
+        image.sprite = cars[currentIndex].image;
 
+    }
+}
+[System.Serializable]
 public class car
 {
     public string name;
