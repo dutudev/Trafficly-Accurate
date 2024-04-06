@@ -33,9 +33,9 @@ public class StartAnim : MonoBehaviour
     }
     public void CameraAnim()
     {
-        LeanTween.value(gameObject, 0f, .5f, 3f).setEaseOutExpo().setOnUpdate((float value) => { vignette.intensity.value = value; }).setOnComplete(() =>
+        LeanTween.value(gameObject, 0f, .25f, 3f).setEaseOutExpo().setOnUpdate((float value) => { vignette.intensity.value = value; }).setOnComplete(() =>
         {
-            LeanTween.value(gameObject, .5f, 0f, 3f).setEaseOutExpo().setOnUpdate((float value) => { vignette.intensity.value = value; });
+            LeanTween.value(gameObject, .25f, 0f, 3f).setEaseOutExpo().setOnUpdate((float value) => { vignette.intensity.value = value; });
         });
         LeanTween.value(gameObject, 0f, -180f, 3f).setEaseOutExpo().setOnUpdate((float value) => { colorAdjustments.saturation.value = value; }).setOnComplete(() =>
         {
@@ -45,7 +45,7 @@ public class StartAnim : MonoBehaviour
         {
             LeanTween.value(gameObject, 1f, 0f, 3f).setEaseOutExpo().setOnUpdate((float value) => { grain.intensity.value = value; });
         });
-        LeanTween.value(gameObject, 5, 15, 3f).setEaseOutExpo().setOnUpdate((float value) => { VirtualCamera.m_Lens.OrthographicSize = value; }).setOnComplete(() =>
+        LeanTween.value(gameObject, 5, 19, 3f).setEaseOutExpo().setOnUpdate((float value) => { VirtualCamera.m_Lens.OrthographicSize = value; }).setOnComplete(() =>
         {
             LeanTween.value(15, 5, 1.5f).setEaseOutExpo().setOnUpdate((float value) => { VirtualCamera.m_Lens.OrthographicSize = value; }).setOnComplete(() => { playerController.canMove = true; });
         });

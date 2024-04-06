@@ -10,7 +10,7 @@ public class RedCar : MonoBehaviour
     //1 forward, 2 left, 3 right, 4 backwards
     public bool detectedPlayer = false;
 
-    public float treshold = 0.25f;
+    private float threshold = 1f;
 
     public bool sides;
     public int whatSide; //1 left, 2 right
@@ -51,25 +51,25 @@ public class RedCar : MonoBehaviour
         {
             if (whatSide == 1)
             {
-                if (target.transform.position.x - treshold <= this.transform.position.x)
+                if (target.transform.position.x - threshold <= this.transform.position.x)
                     detectedPlayer = true;
             }
             else if (whatSide == 2)
             {
-                if (target.transform.position.x + treshold >= this.transform.position.x)
+                if (target.transform.position.x + threshold >= this.transform.position.x)
                     detectedPlayer = true;
             }
         }
 
         else if (directionFacing == 2)
         {
-            if (target.transform.position.y + treshold >= this.transform.position.y)
+            if (target.transform.position.y + threshold >= this.transform.position.y)
                 detectedPlayer = true;
         }
 
         else if (directionFacing == 3)
         {
-            if (target.transform.position.y - treshold <= this.transform.position.y)
+            if (target.transform.position.y - threshold <= this.transform.position.y)
                 detectedPlayer = true;
         }
 
@@ -77,12 +77,12 @@ public class RedCar : MonoBehaviour
         {
             if (whatSide == 1)
             {
-                if (target.transform.position.x - treshold <= this.transform.position.x)
+                if (target.transform.position.x - threshold <= this.transform.position.x)
                     detectedPlayer = true;
             }
             else if (whatSide == 2)
             {
-                if (target.transform.position.x + treshold >= this.transform.position.x)
+                if (target.transform.position.x + threshold >= this.transform.position.x)
                     detectedPlayer = true;
             }
         }
