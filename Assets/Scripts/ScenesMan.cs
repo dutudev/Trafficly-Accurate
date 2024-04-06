@@ -49,7 +49,9 @@ public class ScenesMan : MonoBehaviour
     public void ChangeScene(string Name)
     {
         change = true;
+        Debug.Log(Name);
         LeanTween.moveLocalX(circleIn, 0, .8f).setEaseInExpo().setOnComplete(() => { SceneManager.LoadScene(Name); });
         sceneName = Name;
+        Debug.Log(Name);
     }
 }
