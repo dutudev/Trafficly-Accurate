@@ -27,11 +27,47 @@ public class SpawnerCars : MonoBehaviour
         for (int i = 0; i < spawnersType.Length; i++)
         {
             if (spawnersType[i] == 1)
-                Instantiate(redCar, spawnersLocation[i].transform.position, Quaternion.identity);
+            {
+                GameObject obj = (GameObject) Instantiate(redCar, spawnersLocation[i].transform.position, Quaternion.identity);
+
+                if (i == 4 || i == 5)
+                    obj.GetComponent<RedCar>().SetDirection(true, 2);
+                else if (i == 6 || i == 7)
+                    obj.GetComponent<RedCar>().SetDirection(true, 3);
+                else if (i == 0 || i == 1)
+                    obj.GetComponent<RedCar>().SetDirection(false, 1);
+                else if (i == 2 || i == 3)
+                    obj.GetComponent<RedCar>().SetDirection(false, 4);
+
+            }
             else if (spawnersType[i] == 2)
-                Instantiate(yellowCar, spawnersLocation[i].transform.position, Quaternion.identity);
+            {
+                GameObject obj = (GameObject)Instantiate(yellowCar, spawnersLocation[i].transform.position, Quaternion.identity);
+
+                if (i == 4 || i == 5)
+                    obj.GetComponent<YellowCar>().SetDirection(true, 2);
+                else if (i == 6 || i == 7)
+                    obj.GetComponent<YellowCar>().SetDirection(true, 3);
+                else if (i == 0 || i == 1)
+                    obj.GetComponent<YellowCar>().SetDirection(false, 1);
+                else if (i == 2 || i == 3)
+                    obj.GetComponent<YellowCar>().SetDirection(false, 4);
+
+            }
             else if (spawnersType[i] == 3)
-                Instantiate(orangeCar, spawnersLocation[i].transform.position, Quaternion.identity);
+            {
+                GameObject obj = (GameObject)Instantiate(orangeCar, spawnersLocation[i].transform.position, Quaternion.identity);
+
+                if (i == 4 || i == 5)
+                    obj.GetComponent<OrangeCar>().SetDirection(true, 2);
+                else if (i == 6 || i == 7)
+                    obj.GetComponent<OrangeCar>().SetDirection(true, 3);
+                else if (i == 0 || i == 1)
+                    obj.GetComponent<OrangeCar>().SetDirection(false, 1);
+                else if (i == 2 || i == 3)
+                    obj.GetComponent<OrangeCar>().SetDirection(false, 4);
+
+            }
         }
     }
 

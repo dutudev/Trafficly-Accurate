@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class RedCar : MonoBehaviour
+public class OrangeCar : MonoBehaviour
 {
     public Transform transformRed;
     public GameObject target;

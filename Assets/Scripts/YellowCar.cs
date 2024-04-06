@@ -15,6 +15,8 @@ public class YellowCar : MonoBehaviour
     public bool stoppedInFront = false;
     public float threshold;
 
+    public bool sides;
+
 
     void Awake()
     {
@@ -48,8 +50,16 @@ public class YellowCar : MonoBehaviour
     {
         if (stoppedInFront == false)
         {
-            if (target.transform.position.y >= this.transform.position.y)
-                detectedPlayer = true;
+            if (sides)
+            {
+                if (target.transform.position.y >= this.transform.position.y)
+                    detectedPlayer = true;
+            }
+            if (!sides)
+            {
+                if (target.transform.position.x >= this.transform.position.x)
+                    detectedPlayer = true;
+            }
         }
 
         if (detectedPlayer && stoppedInFront == false)
@@ -85,5 +95,13 @@ public class YellowCar : MonoBehaviour
         {
             transformRed.position += new Vector3(0f, -movementSpeed * Time.deltaTime, 0f);
         }
+    }
+
+    //Set Direction And Side Of Movement At Spawn
+    public void SetDirection(bool whatSide, int whatDir)
+    {
+        directionFacing = whatDir;
+        sides = whatSide;
+
     }
 }
