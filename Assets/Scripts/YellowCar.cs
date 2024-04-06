@@ -66,10 +66,10 @@ public class YellowCar : MonoBehaviour
         if (detectedPlayer && stoppedInFront == false)
             Move(directionFacing);
 
-        if (detectedPlayer && this.transform.position.x > target.transform.position.x - threshold)
-        {
-            stoppedInFront = true;
-        }
+        //if (detectedPlayer && this.transform.position.x > target.transform.position.x - threshold)
+        //{
+            //stoppedInFront = true;
+        //}
 
         //Implement Faza Lung / Honk , make him move again
     }
