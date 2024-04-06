@@ -143,6 +143,8 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(newPosition);
             transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
         }
+
+        
     }
 
     void RotatePlayer(int rotDir)

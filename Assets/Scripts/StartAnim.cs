@@ -13,7 +13,7 @@ public class StartAnim : MonoBehaviour
     {
         LeanTween.value(gameObject, 5, 15, 3f).setEaseOutExpo().setOnUpdate((float value) => { VirtualCamera.m_Lens.OrthographicSize = value; }).setOnComplete(() =>
         {
-            LeanTween.value(15, 5, 1.5f).setEaseInExpo().setOnUpdate((float value) => { VirtualCamera.m_Lens.OrthographicSize = value; }).setOnComplete(() => { playerController.canMove = true; });
+            LeanTween.value(15, 5, 1.5f).setEaseOutExpo().setOnUpdate((float value) => { VirtualCamera.m_Lens.OrthographicSize = value; }).setOnComplete(() => { playerController.canMove = true; });
         });
     }
 
