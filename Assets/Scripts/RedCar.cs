@@ -63,13 +63,13 @@ public class RedCar : MonoBehaviour
 
         else if (directionFacing == 2)
         {
-            if (target.transform.position.y + threshold >= this.transform.position.y)
+            if (target.transform.position.y >= this.transform.position.y)
                 detectedPlayer = true;
         }
 
         else if (directionFacing == 3)
         {
-            if (target.transform.position.y - threshold <= this.transform.position.y)
+            if (target.transform.position.y <= this.transform.position.y)
                 detectedPlayer = true;
         }
 

@@ -53,12 +53,12 @@ public class YellowCar : MonoBehaviour
         {
             if (sides)
             {
-                if (target.transform.position.y - threshold >= this.transform.position.y)
+                if (target.transform.position.y >= this.transform.position.y)
                     detectedPlayer = true;
             }
             if (!sides)
             {
-                if (target.transform.position.x - threshold >= this.transform.position.x)
+                if (target.transform.position.x >= this.transform.position.x)
                     detectedPlayer = true;
             }
         }
