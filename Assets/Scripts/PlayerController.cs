@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public bool isIddle = true, canMove = false;
     public RectTransform select, d, r, h;
     private Vector2 inputDirection;
+    public ParticleSystem crash1, crash2;
+    public GameObject crash;
 
     private void Awake()
     {
@@ -152,7 +154,6 @@ public class PlayerController : MonoBehaviour
                 RotatePlayer(3);
             }
         }
-
         
     }
 
@@ -180,12 +181,24 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Target"))
         {
+            
             ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
 
         if (other.gameObject.CompareTag("Danger"))
         {
+            crash1.Play();
+            crash2.Play();
             ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    public IEnumerator Death()
+    {
+        crash1.Play();
+        crash2.Play();
+        yield return new WaitForSeconds(1);
+        
     }
 }
