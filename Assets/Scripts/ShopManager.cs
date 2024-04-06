@@ -49,7 +49,7 @@ public class ShopManager : MonoBehaviour
     {
         if (currentIndex <= 0)
         {
-            currentIndex = cars.Length;
+            currentIndex = cars.Length-1;
         }
         else
         {
