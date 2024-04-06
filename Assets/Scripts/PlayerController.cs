@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public bool isIddle = true, canMove = false;
     public RectTransform select, d, r, h;
     private Vector2 inputDirection;
-    public GameObject dirObj;
 
     private void Awake()
     {
@@ -142,8 +141,7 @@ public class PlayerController : MonoBehaviour
             Vector2 movement = inputDirection * speed;
             Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
             rb.MovePosition(newPosition);
-            dirObj.transform.position = new Vector3(newPosition.x, newPosition.y, 0);
-            transform.rotation.SetFromToRotation(transform.position, dirObj.transform.position);
+            transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
         }
 
         
