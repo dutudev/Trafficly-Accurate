@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public bool isIddle = true, canMove = false;
     public RectTransform select, d, r, h;
+    private Vector2 inputDirection;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        switchCooldown = 0.1f;
+        switchCooldown = 0.25f;
     }
 
     // Update is called once per frame
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
             {
                 selected++;
             }
-            switchCooldown = 0.1f;
+            switchCooldown = 0.25f;
             AnimateSelect();
         }
         if (Input.GetAxisRaw("Fire1") == 1 && switchCooldown <= 0f)
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
             {
                 selected--;
             }
-            switchCooldown = 0.1f;
+            switchCooldown = 0.25f;
             AnimateSelect();
         }
      /*   switch (selected)
@@ -135,7 +136,18 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            switch (selected)
+            {
+                case 1:
+                    inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Mathf.Abs( Input.GetAxisRaw("Vertical"))).normalized;
+                    break;
+                case 2:
+                    inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), -Mathf.Abs(Input.GetAxisRaw("Vertical"))).normalized;
+                    break;
+                case 3:
+                    
+                    break;
+            }
             Vector2 movement = inputDirection * speed;
             Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
             rb.MovePosition(newPosition);
