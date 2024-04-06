@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Danger"))
         {
             UnityEngine.Debug.Log("Intru");
-            ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().ToString());
+            ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().name);
         }
     }
 }
