@@ -10,6 +10,20 @@ public class ScenesMan : MonoBehaviour
     public GameObject circleOut, circleIn;
     public bool change = false;
     public string sceneName;
+
+    public static ScenesMan Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         LeanTween.moveLocalX(circleOut, 1000, 1.5f).setEaseOutExpo();

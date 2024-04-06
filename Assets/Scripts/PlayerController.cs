@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -93,18 +94,7 @@ public class PlayerController : MonoBehaviour
             switchCooldown = 0.25f;
             AnimateSelect();
         }
-     /*   switch (selected)
-        {
-            case 1:
-                select.anchoredPosition = new Vector2(d.anchoredPosition.x, -215.9f);
-                break;
-            case 2:
-                select.anchoredPosition = new Vector2(r.anchoredPosition.x, -215.9f);
-                break;
-            case 3:
-                select.anchoredPosition = new Vector2(h.anchoredPosition.x, -215.9f);
-                break;
-        }*/
+
         switchCooldown -= Time.deltaTime;
     }
 
@@ -153,30 +143,6 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(newPosition);
             transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
         }
-        
-        /*
-        switch (dir)
-        {
-            case 1:
-                rb.MovePosition(new Vector2(this.transform.position.x, this.transform.position.y + Input.GetAxisRaw("Vertical") * speed));
-                RotatePlayer(1);
-                break;
-            case 2:
-                rb.MovePosition(new Vector2(this.transform.position.x, this.transform.position.y + Input.GetAxisRaw("Vertical") * speed));
-                RotatePlayer(2);
-                break;
-            case 3:
-                rb.MovePosition(new Vector2(this.transform.position.x + Input.GetAxisRaw("Horizontal") * speed, this.transform.position.y));
-                RotatePlayer(3);
-                break;
-            case 4:
-                rb.MovePosition(new Vector2(this.transform.position.x + Input.GetAxisRaw("Horizontal") * speed, this.transform.position.y));
-                RotatePlayer(4);
-                break;
-
-        }
-
-        */
     }
 
     void RotatePlayer(int rotDir)
@@ -197,5 +163,14 @@ public class PlayerController : MonoBehaviour
                 break;
 
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Target"))
+            ScenesMan.Instance.ChangeScene(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).ToString());
+
+        if (other.gameObject.CompareTag("Danger"))
+            ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().ToString());
     }
 }
