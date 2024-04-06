@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformRed: {fileID: 0}
   target: {fileID: 0}
-  movementSpeed: 14
+  movementSpeed: 18
   directionFacing: 1
   detectedPlayer: 0
   stoppedInFront: 0
