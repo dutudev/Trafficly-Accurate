@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6960665129005410824}
   - component: {fileID: 7315945169579303651}
+  - component: {fileID: 7936455820082082995}
   m_Layer: 0
   m_Name: OrangeCar
   m_TagString: Untagged
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7936455820082082995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3825874467661043844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931852df92c21e442a928b17c4e5cb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformRed: {fileID: 0}
+  target: {fileID: 0}
+  movementSpeed: 8
+  directionFacing: 0
+  detectedPlayer: 0
+  sides: 0
