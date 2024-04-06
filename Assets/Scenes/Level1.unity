@@ -612,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &469477984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,6 +704,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
   m_PrefabInstance: {fileID: 1603747992}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &548169455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5652642342675820175, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
+  m_PrefabInstance: {fileID: 1603747992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9f7212a924db64b9b72d59aa26cd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825296451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1675,7 @@ GameObject:
   - component: {fileID: 1259882407}
   - component: {fileID: 1259882410}
   - component: {fileID: 1259882411}
+  - component: {fileID: 1259882412}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1714,7 +1726,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 13.204696
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1822,7 +1834,33 @@ MonoBehaviour:
       m_Calls: []
   m_CameraActivatedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1259882412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259882406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60d1212ac6d1b645ad550a05802cbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VirtualCamera: {fileID: 1524717174}
+  playerController: {fileID: 548169455}
 --- !u!1 &1524717173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1900,7 @@ MonoBehaviour:
   m_Follow: {fileID: 548169453}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 13.204696
+    OrthographicSize: 12
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0

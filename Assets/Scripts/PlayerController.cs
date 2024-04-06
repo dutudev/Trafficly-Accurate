@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed, brakingForce;
     public int dir;
     public Animator animator;
-    public bool isIddle = true;
+    public bool isIddle = true, canMove = false;
 
     private void Awake()
     {
@@ -66,11 +66,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        Vector2 movement = inputDirection * speed;
-        Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
-        rb.MovePosition(newPosition);
-        transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
+        if (canMove)
+        {
+            Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            Vector2 movement = inputDirection * speed;
+            Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
+            rb.MovePosition(newPosition);
+            transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
+        }
+        
         /*
         switch (dir)
         {
