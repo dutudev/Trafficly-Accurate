@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float speed, brakingForce;
-    public int dir;
+    public float speed, brakingForce, switchCooldown;
+    // 1-d 2-r 3-h
+    public int dir, selected = 1;
     public Animator animator;
     public bool isIddle = true, canMove = false;
+    public RectTransform select, d, r, h;
+    private Vector2 inputDirection;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        switchCooldown = 0.25f;
     }
 
     // Update is called once per frame
@@ -62,13 +67,87 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isReverse", false);
             animator.SetBool("isIdle", true);
         }
+        if (Input.GetAxisRaw("Fire2") == 1 && switchCooldown <= 0f)
+        {
+            if(selected >= 3)
+            {
+                selected = 1;
+            }
+            else
+            {
+                selected++;
+            }
+            switchCooldown = 0.25f;
+            AnimateSelect();
+        }
+        if (Input.GetAxisRaw("Fire1") == 1 && switchCooldown <= 0f)
+        {
+            if (selected <= 1)
+            {
+                selected = 3;
+            }
+            else
+            {
+                selected--;
+            }
+            switchCooldown = 0.25f;
+            AnimateSelect();
+        }
+     /*   switch (selected)
+        {
+            case 1:
+                select.anchoredPosition = new Vector2(d.anchoredPosition.x, -215.9f);
+                break;
+            case 2:
+                select.anchoredPosition = new Vector2(r.anchoredPosition.x, -215.9f);
+                break;
+            case 3:
+                select.anchoredPosition = new Vector2(h.anchoredPosition.x, -215.9f);
+                break;
+        }*/
+        switchCooldown -= Time.deltaTime;
     }
 
+    void AnimateSelect()
+    {
+        
+        switch (selected)
+        {
+            case 1:
+                LeanTween.value(gameObject, select.anchoredPosition.x, d.anchoredPosition.x, 0.2f).setEaseInOutExpo().setOnUpdate((float val) =>
+                {
+                    select.anchoredPosition = new Vector2(val, -215.9f);
+                });
+                break;
+            case 2:
+                LeanTween.value(gameObject, select.anchoredPosition.x, r.anchoredPosition.x, 0.2f).setEaseInOutExpo().setOnUpdate((float val) =>
+                {
+                    select.anchoredPosition = new Vector2(val, -215.9f);
+                });
+                break;
+            case 3:
+                LeanTween.value(gameObject, select.anchoredPosition.x, h.anchoredPosition.x, 0.2f).setEaseInOutExpo().setOnUpdate((float val) => { 
+                    select.anchoredPosition = new Vector2(val, -215.9f);
+                });
+                break;
+        }
+    }
     void FixedUpdate()
     {
         if (canMove)
         {
-            Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            switch (selected)
+            {
+                case 1:
+                    inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Mathf.Abs( Input.GetAxisRaw("Vertical"))).normalized;
+                    break;
+                case 2:
+                    inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), -Mathf.Abs(Input.GetAxisRaw("Vertical"))).normalized;
+                    break;
+                case 3:
+                    
+                    break;
+            }
             Vector2 movement = inputDirection * speed;
             Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
             rb.MovePosition(newPosition);
