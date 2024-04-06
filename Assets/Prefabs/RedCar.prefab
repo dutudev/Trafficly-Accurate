@@ -70,11 +70,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformRed: {fileID: 0}
   target: {fileID: 0}
-  movementSpeed: 18
-  directionFacing: 1
+  movementSpeed: 17
+  directionFacing: 4
   detectedPlayer: 0
   sides: 0
-  whatSide: 0
+  whatSide: 2
 --- !u!212 &4827810467941291163
 SpriteRenderer:
   m_ObjectHideFlags: 0
