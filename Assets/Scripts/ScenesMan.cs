@@ -27,10 +27,10 @@ public class ScenesMan : MonoBehaviour
     }
     void Start()
     {
-        LeanTween.scale(image, new Vector3(3, 3, 3), 2f).setEaseInOutExpo().setOnComplete(() =>
+        LeanTween.scale(image, new Vector3(3, 3, 3), 1.5f).setEaseInOutExpo().setOnComplete(() =>
         {
             LeanTween.scale(image, new Vector3(0, 0, 0), .5f).setEaseInExpo().setOnComplete(() => { 
-                LeanTween.moveLocalX(circleOut, 1000, 1.5f).setEaseOutExpo();
+                LeanTween.moveLocalX(circleOut, 1000, .8f).setEaseOutExpo();
                 if(SceneManager.GetActiveScene().ToString() != "Main Menu")
                 {
                     anim.CameraAnim();
@@ -49,7 +49,7 @@ public class ScenesMan : MonoBehaviour
     public void ChangeScene(string Name)
     {
         change = true;
-        LeanTween.moveLocalX(circleIn, 0, 1.5f).setEaseInExpo().setOnComplete(() => { SceneManager.LoadScene(Name); });
+        LeanTween.moveLocalX(circleIn, 0, .8f).setEaseInExpo().setOnComplete(() => { SceneManager.LoadScene(Name); });
         sceneName = Name;
     }
 }
