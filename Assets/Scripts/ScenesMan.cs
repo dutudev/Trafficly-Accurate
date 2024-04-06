@@ -7,7 +7,7 @@ using DentedPixel;
 public class ScenesMan : MonoBehaviour
 {
     public float wait;
-    public GameObject circleOut, circleIn;
+    public GameObject circleOut, circleIn, image;
     public bool change = false;
     public string sceneName;
 
@@ -26,7 +26,11 @@ public class ScenesMan : MonoBehaviour
     }
     void Start()
     {
-        LeanTween.moveLocalX(circleOut, 1000, 1.5f).setEaseOutExpo();
+        LeanTween.scale(image, new Vector3(3, 3, 3), 2f).setEaseInOutExpo().setOnComplete(() =>
+        {
+            LeanTween.scale(image, new Vector3(0, 0, 0), .5f).setEaseInExpo().setOnComplete(() => { LeanTween.moveLocalX(circleOut, 1000, 1.5f).setEaseOutExpo(); });
+        });
+        
     }
     void Update()
     {
