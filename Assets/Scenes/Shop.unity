@@ -245,6 +245,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac358104b67b0fb41a61ceaf31889e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cars:
+  - name: Dacus Supernovus
+    cost: 0
+    image: {fileID: 21300000, guid: e17c3b6012f530f4ca365a70297100d5, type: 3}
+  - name: Tepes
+    cost: 0
+    image: {fileID: 21300000, guid: 693fea6d8a6abb2438fb623fafb2015b, type: 3}
+  - name: 
+    cost: 0
+    image: {fileID: 0}
 --- !u!1 &98192952
 GameObject:
   m_ObjectHideFlags: 0
