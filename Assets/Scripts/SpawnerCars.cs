@@ -48,6 +48,7 @@ public class SpawnerCars : MonoBehaviour
                     obj.GetComponent<YellowCar>().SetDirection(true, 2);
                 else if (i == 6 || i == 7)
                     obj.GetComponent<YellowCar>().SetDirection(true, 3);
+
                 else if (i == 0 || i == 1)
                     obj.GetComponent<YellowCar>().SetDirection(false, 1);
                 else if (i == 2 || i == 3)
@@ -62,6 +63,7 @@ public class SpawnerCars : MonoBehaviour
                     obj.GetComponent<OrangeCar>().SetDirection(true, 2);
                 else if (i == 6 || i == 7)
                     obj.GetComponent<OrangeCar>().SetDirection(true, 3);
+
                 else if (i == 0 || i == 1)
                     obj.GetComponent<OrangeCar>().SetDirection(false, 1);
                 else if (i == 2 || i == 3)

@@ -268,33 +268,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1717993336775104058, guid: 1c70515e520141141af524dccbc5364a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.64278764
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717993336775104058, guid: 1c70515e520141141af524dccbc5364a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717993336775104058, guid: 1c70515e520141141af524dccbc5364a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717993336775104058, guid: 1c70515e520141141af524dccbc5364a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7660445
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717993336775104058, guid: 1c70515e520141141af524dccbc5364a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -100
-      objectReference: {fileID: 0}
     - target: {fileID: 3113072395179717061, guid: 1c70515e520141141af524dccbc5364a, type: 3}
       propertyPath: m_Name
       value: BlueCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 5028982180726923514, guid: 1c70515e520141141af524dccbc5364a, type: 3}
-      propertyPath: m_FlipY
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7829056966442601331, guid: 1c70515e520141141af524dccbc5364a, type: 3}
       propertyPath: m_RootOrder
