@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        scenesMan.ChangeScene("Level1");
+        scenesMan.ChangeScene("Stage1");
     }
     public void Quit()
     {

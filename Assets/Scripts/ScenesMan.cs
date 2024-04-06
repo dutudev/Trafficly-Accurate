@@ -10,6 +10,7 @@ public class ScenesMan : MonoBehaviour
     public GameObject circleOut, circleIn, image;
     public bool change = false;
     public string sceneName;
+    public StartAnim anim;
 
     public static ScenesMan Instance { get; private set; }
 
@@ -28,7 +29,13 @@ public class ScenesMan : MonoBehaviour
     {
         LeanTween.scale(image, new Vector3(3, 3, 3), 2f).setEaseInOutExpo().setOnComplete(() =>
         {
-            LeanTween.scale(image, new Vector3(0, 0, 0), .5f).setEaseInExpo().setOnComplete(() => { LeanTween.moveLocalX(circleOut, 1000, 1.5f).setEaseOutExpo(); });
+            LeanTween.scale(image, new Vector3(0, 0, 0), .5f).setEaseInExpo().setOnComplete(() => { 
+                LeanTween.moveLocalX(circleOut, 1000, 1.5f).setEaseOutExpo();
+                if(SceneManager.GetActiveScene().ToString() != "Main Menu")
+                {
+                    anim.CameraAnim();
+                }
+            });
         });
         
     }
