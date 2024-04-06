@@ -11,6 +11,12 @@ public class MainMenu : MonoBehaviour
     {
         scenesMan.ChangeScene("Stage1");
     }
+
+    public void Shop()
+    {
+        scenesMan.ChangeScene("Shop");
+    }
+
     public void Quit()
     {
         Application.Quit();
