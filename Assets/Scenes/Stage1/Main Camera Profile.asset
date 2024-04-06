@@ -120,7 +120,7 @@ MonoBehaviour:
     m_Value: 1
   rounded:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
 --- !u!114 &2517985070869798606
 MonoBehaviour:
   m_ObjectHideFlags: 3

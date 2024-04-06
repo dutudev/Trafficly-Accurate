@@ -141,7 +141,19 @@ public class PlayerController : MonoBehaviour
             Vector2 movement = inputDirection * speed;
             Vector2 newPosition = new Vector2(this.transform.position.x, this.transform.position.y) + movement;
             rb.MovePosition(newPosition);
-            transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
+            //  transform.Rotate(0, 0, (transform.rotation.z + Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical")) * 10);
+            if (Mathf.Abs(Input.GetAxisRaw("Vertical")) >= Mathf.Abs(Input.GetAxisRaw("Horizontal")))
+            {
+                RotatePlayer(1);
+            }
+            else if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                RotatePlayer(4);
+            }
+            else
+            {
+                RotatePlayer(3);
+            }
         }
 
         
@@ -155,7 +167,7 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 break;
             case 2:
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 break;
             case 3:
                 transform.rotation = Quaternion.Euler(0f, 0f, 90f);
