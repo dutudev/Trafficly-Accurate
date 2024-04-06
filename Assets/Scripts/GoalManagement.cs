@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+
 
 public class GoalManagement : MonoBehaviour
 {
     public GameObject[] targets;
     private float cooldown;
     public TMP_Text stateText;
+    public ScenesMan scenesMan;
     // 1-intermission; 2-in round
     private int state, lastTarget = -1, curTarget, targetsNeeded, targetsHit;
     void Start()
@@ -63,7 +64,8 @@ public class GoalManagement : MonoBehaviour
         targetsHit++;
         if(targetsNeeded == targetsHit)
         {
-            SceneManager.LoadScene("Level1");
+            cooldown = 4f;
+            scenesMan.ChangeScene("Level1");
         }
     }
 }
