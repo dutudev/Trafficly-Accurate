@@ -46,10 +46,16 @@ public class ScenesMan : MonoBehaviour
             wait -= Time.deltaTime;
         }
     }
-    public void ChangeScene(string Name)
+    public void ChangeScene(int id)
     {
         change = true;
-        LeanTween.moveLocalX(circleIn, 0, .8f).setEaseInExpo().setOnComplete(() => { SceneManager.LoadScene(Name); });
-        sceneName = Name;
+        LeanTween.moveLocalX(circleIn, 0, .8f).setEaseInExpo().setOnComplete(() => { SceneManager.LoadScene(id); });
+        sceneName = SceneManager.GetSceneByBuildIndex(id).name;
+    }
+    public void ChangeScene(string n)
+    {
+        change = true;
+        LeanTween.moveLocalX(circleIn, 0, .8f).setEaseInExpo().setOnComplete(() => { SceneManager.LoadScene(n); });
+        sceneName = n;
     }
 }

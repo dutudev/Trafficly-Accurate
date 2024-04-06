@@ -13,7 +13,7 @@ public class ShopManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateText();
     }
 
     // Update is called once per frame
@@ -25,7 +25,37 @@ public class ShopManager : MonoBehaviour
     {
         carName.text = cars[currentIndex].name;
         image.sprite = cars[currentIndex].image;
-
+        if (PlayerPrefs.GetInt("has" + currentIndex, 0) == 1)
+        {
+            buyText.text = "Equipp";
+        }
+        else
+        {
+            buyText.text = "Buy - " + cars[currentIndex].cost;
+        }
+    }
+    public void right()
+    {
+        if(currentIndex >= cars.Length-1) {
+            currentIndex = 0;
+        }
+        else
+        {
+            currentIndex++;
+        }
+        UpdateText();
+    }
+    public void left()
+    {
+        if (currentIndex <= 0)
+        {
+            currentIndex = cars.Length;
+        }
+        else
+        {
+            currentIndex--;
+        }
+        UpdateText();
     }
 }
 [System.Serializable]
