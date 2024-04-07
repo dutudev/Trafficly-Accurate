@@ -9,6 +9,10 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        scenesMan.ChangeScene("Tutorial");
+    }
+    public void PlayGame()
+    {
         scenesMan.ChangeScene("Stage1");
     }
 
