@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem crash1, moveParticle;
     public GameObject crash;
     public GameObject SwearWords;
+    public AudioSource giberish, boom;
+    public SpriteRenderer sprite;
     
     public static PlayerController Instance { get; private set; }
 
@@ -225,6 +227,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Danger"))
         {
             crash1.Play();
+            boom.Play();
+            sprite.enabled = false;
             ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
@@ -232,8 +236,10 @@ public class PlayerController : MonoBehaviour
     public IEnumerator SwearWord()
     {
         SwearWords.SetActive(true);
+        giberish.Play();
         yield return new WaitForSeconds(1);
         SwearWords.SetActive(false);
+
     }
 
 }
