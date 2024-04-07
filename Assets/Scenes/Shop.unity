@@ -250,12 +250,12 @@ MonoBehaviour:
   - name: Dacus Supernovus
     cost: 0
     image: {fileID: 21300000, guid: e17c3b6012f530f4ca365a70297100d5, type: 3}
-  - name: Tepes
+  - name: Cazanul lu' Traian
     cost: 0
     image: {fileID: 21300000, guid: 693fea6d8a6abb2438fb623fafb2015b, type: 3}
-  - name: e
+  - name: masina din aia gri
     cost: 0
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e0b82474ec0685e46bda4edcbb832d0f, type: 3}
   currentIndex: 0
   carName: {fileID: 770476602}
   buyText: {fileID: 742204335}

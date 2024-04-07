@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool isIddle = true, canMove = false;
     public RectTransform select, d, r, h;
     private Vector2 inputDirection;
-    public ParticleSystem crash1, crash2;
+    public ParticleSystem crash1, crash2, moveParticle;
     public GameObject crash;
 
     private void Awake()
@@ -70,34 +70,38 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isReverse", false);
             animator.SetBool("isIdle", true);
         }
-       /* if (Input.GetAxisRaw("Fire2") == 1 && switchCooldown <= 0f)
-        {
-            if(selected >= 3)
-            {
-                selected = 1;
-            }
-            else
-            {
-                selected++;
-            }
-            switchCooldown = 0.25f;
-            AnimateSelect();
-        }
-        if (Input.GetAxisRaw("Fire1") == 1 && switchCooldown <= 0f)
-        {
-            if (selected <= 1)
-            {
-                selected = 3;
-            }
-            else
-            {
-                selected--;
-            }
-            switchCooldown = 0.25f;
-            AnimateSelect();
-        }
+        /* if (Input.GetAxisRaw("Fire2") == 1 && switchCooldown <= 0f)
+         {
+             if(selected >= 3)
+             {
+                 selected = 1;
+             }
+             else
+             {
+                 selected++;
+             }
+             switchCooldown = 0.25f;
+             AnimateSelect();
+         }
+         if (Input.GetAxisRaw("Fire1") == 1 && switchCooldown <= 0f)
+         {
+             if (selected <= 1)
+             {
+                 selected = 3;
+             }
+             else
+             {
+                 selected--;
+             }
+             switchCooldown = 0.25f;
+             AnimateSelect();
+         }
 
-        switchCooldown -= Time.deltaTime;*/
+         switchCooldown -= Time.deltaTime;*/
+        while (!isIddle)
+        {
+            moveParticle.Play();
+        }
     }
 
  /*   void AnimateSelect()
