@@ -74,6 +74,8 @@ MonoBehaviour:
   movementSpeed: 14
   directionFacing: 4
   detectedPlayer: 0
+  carSound: 0
+  honk: {fileID: 1294126849871168828}
   sides: 0
   whatSide: 2
 --- !u!212 &4827810467941291163
@@ -184,7 +186,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 479b8298ef05ad34abfd37a4c5b822d7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

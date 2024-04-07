@@ -8,7 +8,8 @@ public class RedCar : MonoBehaviour
     public float movementSpeed = 8f;
     public int directionFacing; //Declare This On Scene
     //1 forward, 2 left, 3 right, 4 backwards
-    public bool detectedPlayer = false;
+    public bool detectedPlayer = false, carSound = false;
+    public AudioSource honk;
 
     private float threshold = 1f;
 
@@ -88,8 +89,21 @@ public class RedCar : MonoBehaviour
         }
 
         if (detectedPlayer)
+        {
             Move(directionFacing);
+            if (!carSound)
+            {
+                honk.dopplerLevel = Random.Range(1f, 5f);
+                honk.pitch = Random.Range(0.6f, 1.5f);
+                honk.Play();
+                carSound= true;
+            }
+        }
+            
+
     }
+
+    
 
     public void Move(int direction)
     {
