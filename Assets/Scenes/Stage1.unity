@@ -4564,6 +4564,10 @@ PrefabInstance:
       propertyPath: select
       value: 
       objectReference: {fileID: 317156792}
+    - target: {fileID: 5652642342675820175, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 2089169796}
     - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -19077,6 +19081,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085657444}
   m_CullTransparentMesh: 1
+--- !u!212 &2089169796 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7082504595014939465, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
+  m_PrefabInstance: {fileID: 1603747992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2143377853
 PrefabInstance:
   m_ObjectHideFlags: 0
