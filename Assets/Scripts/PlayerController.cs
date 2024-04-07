@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     // 1-d 2-r 3-h
     public int dir, selected = 1;
     public Animator animator;
-    public bool isIddle = true, canMove = false;
+    public bool isIddle = true, canMove = false, started = false;
     public RectTransform select, d, r, h;
     private Vector2 inputDirection;
-    public ParticleSystem crash1, crash2, moveParticle;
+    public ParticleSystem crash1, moveParticle;
     public GameObject crash;
 
     private void Awake()
@@ -98,9 +98,13 @@ public class PlayerController : MonoBehaviour
          }
 
          switchCooldown -= Time.deltaTime;*/
-        while (!isIddle)
+        if (!isIddle)
         {
-            moveParticle.Play();
+            particleMove();
+        }
+        else
+        {
+            particleMoveStop();
         }
     }
 
@@ -128,6 +132,22 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     } */
+    void particleMove()
+    {
+        if(!started)
+        {
+            moveParticle.Play();
+            started = true;
+        }
+    }
+    void particleMoveStop()
+    {
+        if (started)
+        {
+            moveParticle.Stop();
+            started = false;
+        }
+    }
     void FixedUpdate()
     {
         if (canMove)
@@ -193,16 +213,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Danger"))
         {
             crash1.Play();
-            crash2.Play();
             ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
-    public IEnumerator Death()
-    {
-        crash1.Play();
-        crash2.Play();
-        yield return new WaitForSeconds(1);
-        
-    }
 }

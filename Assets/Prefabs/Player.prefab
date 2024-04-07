@@ -159,6 +159,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   isIddle: 1
   canMove: 0
+  started: 0
   select: {fileID: 0}
   d: {fileID: 0}
   r: {fileID: 0}
@@ -499,7 +500,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
+      scalar: 0.8
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2
