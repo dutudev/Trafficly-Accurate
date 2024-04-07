@@ -14,8 +14,9 @@ public class YellowCar : MonoBehaviour
     public bool stoppedInFront = false;
     private float threshold = 1f;
 
-    public bool sides;
+    public bool sides, carSound = false;
     public int whatSide; //1 left, 2 right
+    public AudioSource honk;
 
 
     void Awake()
@@ -63,11 +64,21 @@ public class YellowCar : MonoBehaviour
         }
 
         if (detectedPlayer && stoppedInFront == false)
+        {
             Move(directionFacing);
+            if (!carSound)
+            {
+                honk.dopplerLevel = Random.Range(1f, 5f);
+                honk.pitch = Random.Range(0.6f, 1.5f);
+                honk.Play();
+                carSound = true;
+            }
+        }
+
 
         //if (detectedPlayer && this.transform.position.x > target.transform.position.x - threshold)
         //{
-            //stoppedInFront = true;
+        //stoppedInFront = true;
         //}
 
         //Implement Faza Lung / Honk , make him move again
