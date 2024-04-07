@@ -4528,25 +4528,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1012404784500655709, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1584961152976885976, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998797670226877618, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.213
-      objectReference: {fileID: 0}
-    - target: {fileID: 2904714125742979816, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2904714125742979816, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 559219365
       objectReference: {fileID: 0}
     - target: {fileID: 5652642342675820175, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
       propertyPath: d
@@ -4564,10 +4548,6 @@ PrefabInstance:
       propertyPath: select
       value: 
       objectReference: {fileID: 317156792}
-    - target: {fileID: 5652642342675820175, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 2089169796}
     - target: {fileID: 7408761545085221481, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4612,25 +4592,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8735795645549334013, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8735795645549334013, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_UseCustomVertexStreams
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8735795645549334013, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 8735795645549334013, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5072400719224192583, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
@@ -19081,11 +19044,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085657444}
   m_CullTransparentMesh: 1
---- !u!212 &2089169796 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7082504595014939465, guid: ca18d76f45bf31d4d9a1721346e75571, type: 3}
-  m_PrefabInstance: {fileID: 1603747992}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2143377853
 PrefabInstance:
   m_ObjectHideFlags: 0

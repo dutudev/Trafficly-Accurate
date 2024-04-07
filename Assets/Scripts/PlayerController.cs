@@ -236,6 +236,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator SwearWord()
     {
         SwearWords.SetActive(true);
+        giberish.pitch = Random.Range(0.9f, 1.1f);
         giberish.Play();
         yield return new WaitForSeconds(1);
         SwearWords.SetActive(false);
