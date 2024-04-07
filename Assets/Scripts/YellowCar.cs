@@ -66,8 +66,10 @@ public class YellowCar : MonoBehaviour
         if (detectedPlayer && stoppedInFront == false)
         {
             Move(directionFacing);
+            
             if (!carSound)
             {
+                StartCoroutine(PlayerController.Instance.SwearWord());
                 honk.dopplerLevel = Random.Range(1f, 5f);
                 honk.pitch = Random.Range(0.6f, 1.5f);
                 honk.Play();

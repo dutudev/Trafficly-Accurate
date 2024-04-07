@@ -16,9 +16,21 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputDirection;
     public ParticleSystem crash1, moveParticle;
     public GameObject crash;
+    public GameObject SwearWords;
+    
+    public static PlayerController Instance { get; private set; }
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         animator = GetComponent<Animator>();
         switchCooldown = 0.25f;
     }
@@ -215,6 +227,13 @@ public class PlayerController : MonoBehaviour
             crash1.Play();
             ScenesMan.Instance.ChangeScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    public IEnumerator SwearWord()
+    {
+        SwearWords.SetActive(true);
+        yield return new WaitForSeconds(1);
+        SwearWords.SetActive(false);
     }
 
 }

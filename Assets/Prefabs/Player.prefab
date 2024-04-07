@@ -345,9 +345,9 @@ MonoBehaviour:
   r: {fileID: 0}
   h: {fileID: 0}
   crash1: {fileID: 7863110285547865864}
-  crash2: {fileID: 4353636023573049373}
   moveParticle: {fileID: 2046698286114911887}
   crash: {fileID: 924090303883363356, guid: ffa68127dd0ccf34380a237398d0cf8b, type: 3}
+  SwearWords: {fileID: 1012404784500655709}
 --- !u!61 &2486493805876606713
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5307,11 +5307,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffa68127dd0ccf34380a237398d0cf8b, type: 3}
---- !u!198 &4353636023573049373 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8222499337499614339, guid: ffa68127dd0ccf34380a237398d0cf8b, type: 3}
-  m_PrefabInstance: {fileID: 5654013629874760862}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5426979789532639241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 371430617884646551, guid: ffa68127dd0ccf34380a237398d0cf8b, type: 3}
